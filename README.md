@@ -1,0 +1,1 @@
+A command line console simulator for executing a contract automaton and exploring the state space.
