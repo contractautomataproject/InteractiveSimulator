@@ -21,9 +21,10 @@ public class InteractiveSimulator {
             System.out.println("java -jar InteractiveSimulator-1.0-SNAPSHOT-jar-with-dependencies.jar [file.data]");
             return;
         }
+
         Scanner scanner = new Scanner(System.in);
-        AutDataConverter<CALabel> bdc = new AutDataConverter<>(CALabel::new);
-        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> aut = bdc.importMSCA(args[0]);
+        AutDataConverter<CALabel> adc = new AutDataConverter<>(CALabel::new);
+        Automaton<String, Action, State<String>, ModalTransition<String,Action,State<String>, CALabel>> aut = adc.importMSCA(args[0]);
         State<String> currentState = aut.getInitial();
 
         while (true){
